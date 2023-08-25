@@ -1,5 +1,5 @@
 import React from 'react'
-import { IoIosArrowDown } from 'react-icons/Io'
+import { IoIosArrowDown } from 'react-icons/io'
 import { Link as LinkSr } from 'react-scroll'
 import  Search  from './Search'
 
