@@ -31,7 +31,7 @@ export const OrderTable = ({ orders }) => {
     return (
         <div className="relative overflow-x-auto">
             <table className="w-full text-sm text-left text-gray-500  ">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-100 border-b  ">
+                <thead className="text-xs uppercase bg-blue-500 text-white border-b  ">
                     <tr className=''>
                         <th scope="col" className="px-6 text-sm py-3">
                             Order ID

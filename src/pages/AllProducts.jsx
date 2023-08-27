@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Product } from '../components/Product'
+import { PProduct } from '../components/PProduct'
 import { Loader } from '../components/Loader'
 import { MetaData } from '../components/MetaData'
 import { getProducts } from '../actions/productAction';
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BsCart4 } from 'react-icons/bs'
 import Search from '../components/Search';
 import Pagination from 'react-js-pagination'
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Slider from '@mui/material/Slider';
 import './allProducts.css'
 
@@ -27,15 +27,15 @@ export const AllProducts = () => {
 
   const { keyword } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const { products, loading, productsCount, resultPerPage, filteredProductsCount } = useSelector(state => state.products)
 
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0, 25000])
   const [category, setCategory] = useState("")
 
+
   const [ratings, setRatings] = useState(0)
-
-
 
 
   const setCurrentPageNo = (e) => {
@@ -46,16 +46,23 @@ export const AllProducts = () => {
     setPrice(newPrice)
   }
 
+  console.log(filteredProductsCount)
+  
+
   useEffect(() => {
     dispatch(getProducts(keyword, currentPage, price, category, ratings))
-
   }, [dispatch, keyword, currentPage, price, category, ratings])
 
   const removeFilterHandler = () => {
     setPrice([0, 25000])
     setCategory("")
     setRatings(0)
+    navigate("/products")
+    setCurrentPage()
   }
+
+
+
 
 
   return (
@@ -80,13 +87,13 @@ export const AllProducts = () => {
             </div>
 
             {products.length !== 0 ?
-              <div className='grid md:grid-cols-4 pb-14 grid-cols-2 md:gap-14 gap-2 md:pl-52 justify-items-end'>
+              <div className='grid md:grid-cols-4 pb-14 grid-cols-2 md:gap-6 py-8 px-6 gap-3 md:pl-52 justify-items-end'>
 
 
                 {
                   products.map((product, i) => {
                     return (
-                      <Product key={i} product={product} />
+                      <PProduct key={i} product={product} />
                     )
                   })
                 }
@@ -112,7 +119,15 @@ export const AllProducts = () => {
               <div className="list-none">
                 {
                   categories.map((category) => (
-                    <li className='hover:text-red-600 font-normal cursor-pointer ' key={category} onClick={() => setCategory(category)}> {category} </li>
+                    <li className='hover:text-red-600 font-normal cursor-pointer ' key={category} onClick={
+                      
+                      () => {
+                      
+                      setCategory(category)
+                      
+                    }
+                        
+                    }> {category} </li>
                   ))
                 }
               </div>
@@ -123,6 +138,7 @@ export const AllProducts = () => {
                   value={ratings}
                   onChange={(e, newRating) => {
                     setRatings(newRating);
+                    
                   }}
                   aria-labelledby="continuous-slider"
                   valueLabelDisplay="auto"
@@ -132,7 +148,10 @@ export const AllProducts = () => {
                 />
               </div>
               <div className='pt-6'>
-                <button className='text-left py-1  px-3 text-white font-semibold rounded bg-orange-400' onClick={removeFilterHandler}>Remove Filters</button>
+                <button className='text-left py-1  px-3 text-white font-semibold rounded hover:bg-orange-400 bg-orange-500' onClick={()=>{
+                  removeFilterHandler()
+               
+                }}>Remove Filters</button>
               </div>
             </div>
 
@@ -178,7 +197,7 @@ export const AllProducts = () => {
 
               </div>
               <div className='pt-6'>
-                <button className='text-left py-1  px-3 text-white font-semibold rounded bg-orange-400' onClick={removeFilterHandler}>Remove Filters</button>
+                <button className='text-left py-1  px-3 text-white font-semibold rounded hover:bg-orange-400 bg-orange-500' onClick={removeFilterHandler}>Remove Filters</button>
               </div>
             </div>
 

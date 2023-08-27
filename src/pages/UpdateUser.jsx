@@ -42,7 +42,7 @@ export const UpdateUser = () => {
             <div className='min-h-screen pt-14 bg-gray-200 pb-16'>
                {loading? <Loader/> : <>
 
-                    <span onClick={() => setSideTog(!sideTog)} className='cursor-pointer z-20 fixed '>
+                    <span onClick={() => setSideTog(!sideTog)} className='cursor-pointer text-orange-500 z-20 fixed '>
                         <BiMenuAltLeft size={44} />
                     </span>
                     <Sidebar sideTog={sideTog} />
@@ -61,7 +61,7 @@ export const UpdateUser = () => {
                                     required
                                     disabled
                                     value={userDetails.name}
-                                    className=' w-full pl-4 outline-none py-1 pr-4'
+                                    className=' w-full pl-4 bg-white outline-none py-1 pr-4'
                                 />
                             </div>
                             <div className='relative pl-3 rounded border border-gray-500 py-1 flex justify-around items-center'>
@@ -72,7 +72,7 @@ export const UpdateUser = () => {
                                     required
                                     disabled
                                     value={userDetails.email}
-                                    className=' w-full pl-4 outline-none py-1 pr-4'
+                                    className=' w-full pl-4 outline-none bg-white py-1 pr-4'
                                 />
                             </div>
                             <div className='relative pl-3 rounded border border-gray-500 py-1 flex justify-around items-center pr-3'>

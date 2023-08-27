@@ -68,3 +68,23 @@ input[type="number"]{
     color: white;
     font-weight: 8 00;
 }
+
+
+
+
+
+
+/* Stepper styles */
+.MuiStepConnector-line {
+    display: flex !important;
+  }
+  
+  .MuiStepConnector-root{
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.349);
+  }
+  
+  .MuiStepConnector-root-active,
+  .MuiStepConnector-root-completed {
+     background-color: blue;
+  }

@@ -14,6 +14,7 @@ const productSlice = createSlice({
         newProduct: {},   
         allReviews: [],
         categoryProducts: [],
+        allProducts: []
     },
     reducers: {
         allProductRequest: (state) => {
@@ -148,6 +149,19 @@ const productSlice = createSlice({
         },
 
 
+        everyProductRequest: (state) => {
+            state.loading = true ;
+        },
+        everyProductSuccess: (state, action) => {
+            state.loading = false ;
+            state.allProducts = action.payload.products
+        },
+        everyProductFail: (state, action) => {
+            state.loading = false ;
+            state.error = action.payload
+        },
+
+
         clearErrors: (state) => {
             state.error = null
 
@@ -156,6 +170,6 @@ const productSlice = createSlice({
 })
 
 export const { allProductRequest, allProductSuccess, allProductFail, clearErrors, productDetailsRequest, productDetailsSuccess, productDetailsFail, newReviewRequest, newReviewSuccess, newReviewFail, newReviewReset, adminProductRequest, adminProductSuccess, adminProductFail, newProductRequest, newProductSuccess, newProductFail,
-    deleteProductRequest, deleteProductSuccess, deleteProductFail, updateProductRequest, updateProductSuccess,updateProductFail, deleteReviewRequest, deleteReviewSuccess, deleteReviewFail, allReviewRequest, allReviewSuccess, allReviewFail, getCategoryProductsRequest, getCategoryProductsSuccess, getCategoryProductsFail} = productSlice.actions ;
+    deleteProductRequest, deleteProductSuccess, deleteProductFail, updateProductRequest, updateProductSuccess,updateProductFail, deleteReviewRequest, deleteReviewSuccess, deleteReviewFail, allReviewRequest, allReviewSuccess, allReviewFail, getCategoryProductsRequest, getCategoryProductsSuccess, getCategoryProductsFail, everyProductRequest, everyProductSuccess, everyProductFail} = productSlice.actions ;
 
 export default productSlice.reducer ;

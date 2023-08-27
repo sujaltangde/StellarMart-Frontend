@@ -3,22 +3,21 @@ import 'react-toastify/dist/ReactToastify.css';
 import { HomeHeader } from '../components/HomeHeader';
 import { Products } from '../components/Products';
 import { MetaData } from '../components/MetaData';
-import { getProducts } from '../actions/productAction';
+import { getProducts, getEveryProduct } from '../actions/productAction';
 import { useDispatch, useSelector } from 'react-redux'
 
 
 
 export const Home = () => {
 
-    const { products, loading, error, productsCount } = useSelector(state => state.products)
+    const { allProducts, loading, error } = useSelector(state => state.products)
 
     const dispatch = useDispatch()
-
-
+    
 
     useEffect(() => {
 
-        dispatch(getProducts())
+        dispatch(getEveryProduct())
 
     }, [dispatch, error])
 
@@ -34,10 +33,10 @@ export const Home = () => {
             
 
 
-            <HomeHeader />
+            <HomeHeader products={allProducts} />
 
 
-            <Products products={products} loading={loading} />
+            <Products products={allProducts.slice(0,12)} loading={loading} />
 
         </>
     );

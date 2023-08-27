@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { allProductRequest, allProductSuccess, allProductFail, clearErrors, newReviewRequest, newReviewSuccess, newReviewFail, adminProductRequest, adminProductSuccess, adminProductFail, newProductRequest, newProductSuccess, newProductFail, deleteProductRequest, deleteProductSuccess, deleteProductFail, updateProductRequest, updateProductSuccess,updateProductFail, deleteReviewRequest, deleteReviewSuccess, deleteReviewFail, allReviewRequest, allReviewSuccess, allReviewFail, getCategoryProductsRequest, getCategoryProductsSuccess, getCategoryProductsFail } from '../slices/ProductSlice.js'
+import { allProductRequest, allProductSuccess, allProductFail, clearErrors, newReviewRequest, newReviewSuccess, newReviewFail, adminProductRequest, adminProductSuccess, adminProductFail, newProductRequest, newProductSuccess, newProductFail, deleteProductRequest, deleteProductSuccess, deleteProductFail, updateProductRequest, updateProductSuccess,updateProductFail, deleteReviewRequest, deleteReviewSuccess, deleteReviewFail, allReviewRequest, allReviewSuccess, allReviewFail, getCategoryProductsRequest, getCategoryProductsSuccess, getCategoryProductsFail, everyProductRequest, everyProductSuccess, everyProductFail } from '../slices/ProductSlice.js'
 import { productDetailsRequest, productDetailsSuccess, productDetailsFail, } from '../slices/ProductDetailSlice.js'
 import { toast } from 'react-toastify'
 
 
 // Getting All Products
-export const getProducts = (keyword = "", currentPage = 1, price = [0, 25000], category = "", ratings = 0) => async (dispatch) => {
+export const getProducts = (keyword = "", currentPage = 1, price = [0, 25000], category , ratings = 0) => async (dispatch) => {
     try {
         dispatch(allProductRequest());
 
@@ -16,7 +16,9 @@ export const getProducts = (keyword = "", currentPage = 1, price = [0, 25000], c
         }
 
 
-        const { data } = await axios.get(link)
+        const { data } = await axios.get(link) 
+
+        console.log(data)
 
         // console.log(data)
         dispatch(allProductSuccess(data));
@@ -206,6 +208,22 @@ export const getCategoryProducts = (category) => async (dispatch) => {
 
     }catch(err){
         dispatch(getCategoryProductsFail(err.response.data.message))
+    }
+}
+
+
+// Get Every Product 
+export const getEveryProduct = () => async (dispatch) => {
+    try{
+        dispatch(everyProductRequest())
+
+        const {data} = await axios.get("https://stellarmart-b.onrender.com/api/v1/getEveryProduct") ;
+
+        dispatch(everyProductSuccess(data))
+
+
+    }catch(err){
+        dispatch(everyProductFail(err.response.data.message))
     }
 }
 

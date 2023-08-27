@@ -37,6 +37,7 @@ import { UpdateOrder } from "./pages/UpdateOrder"
 import { UserList } from "./pages/UserList"
 import { UpdateUser } from "./pages/UpdateUser"
 import { ProductReviews } from "./pages/ProductReviews"
+import { PProducts } from "./pages/PProducts"
 
 
 
@@ -147,6 +148,10 @@ function App() {
 
 
         <Route path="/admin/reviews" element={<ProductReviews/>} />
+
+
+        <Route path="/pproducts" element={<PProducts/>} />
+        <Route path="/pproducts/:searchKey" element={<PProducts/>} />
 
 
       </Routes>

@@ -16,9 +16,8 @@ import { getAllUsers } from '../actions/userAction'
 export const Sidebar = ({ sideTog }) => {
 
     const dispatch = useDispatch()
-    const navigate = useNavigate()
 
-    const [togTree, setTogTree] = useState(true)
+    const [togTree, setTogTree] = useState(false)
 
     return (
         <>
@@ -27,7 +26,7 @@ export const Sidebar = ({ sideTog }) => {
                     <img src={"/favicon.png"} alt="" />
                     <span className='text-xl font-bold'>StellarMart</span>
                 </div>
-                <div className='flex flex-col gap-6'>
+                <div className='flex flex-col gap-10'>
                     <div className="flex items-center gap-2">
                         <Link onClick={()=>{
                             dispatch(getAllProductsForAdmin())
@@ -39,7 +38,7 @@ export const Sidebar = ({ sideTog }) => {
                         </div>
                         </Link>
                     </div>
-                    <div className="flex  flex-col">
+                    <div className="flex gap-1 flex-col">
                         <div className=' items-center gap-2 flex '>
                             <div className='flex items-center  gap-2 cursor-pointer' onClick={() => setTogTree(!togTree)}>
                                 {

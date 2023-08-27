@@ -19,7 +19,7 @@ export const ReviewsAdminTable = ({reviews,productId}) => {
         
 <div className="relative overflow-x-auto pb-24">
             {reviews.length !== 0 ?<table className="w-full text-sm text-left text-gray-500  ">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-100 border-b  ">
+                <thead className="text-xs uppercase bg-blue-500 text-white border-b  ">
                     <tr className=''>
                         <th scope="col" className="px-6 text-sm py-3">
                             Review ID

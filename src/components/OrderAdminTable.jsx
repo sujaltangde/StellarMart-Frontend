@@ -32,7 +32,7 @@ export const OrderAdminTable = ({ orders }) => {
         <>
             <div className="relative overflow-x-auto pb-24">
                 <table className="w-full text-sm text-left text-gray-500  ">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-100 border-b  ">
+                    <thead className="text-xs bg-blue-500 text-white uppercase  border-b  ">
                         <tr className=''>
                             <th scope="col" className="px-6 text-sm py-3">
                                 Product ID

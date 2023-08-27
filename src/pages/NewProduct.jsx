@@ -89,7 +89,7 @@ export const NewProduct = () => {
         <>
             <MetaData title="Create Product" />
             <div className='min-h-screen pt-14 bg-gray-200 pb-16'>
-                <span onClick={() => setSideTog(!sideTog)} className='cursor-pointer z-20 fixed '>
+                <span onClick={() => setSideTog(!sideTog)} className='cursor-pointer text-orange-500 z-20 fixed '>
                     <BiMenuAltLeft size={44} />
                 </span>
                 <Sidebar sideTog={sideTog} />

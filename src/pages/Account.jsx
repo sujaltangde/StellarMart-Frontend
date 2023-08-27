@@ -44,9 +44,10 @@ export const Account = () => {
                   <div className='flex md:justify-between pb-14 justify-center md:flex-row flex-col pt-2  w-full '>
 
                     <div className=' md:w-1/2 w-full flex flex-col justify-center items-center'>
-                      <div className='md:pb-12 pb-6 pt-2'>
+                       <div className='md:pb-12 pb-6 pt-2'>
                         <img src={me.avtar[0].url} className='h-72 w-72 rounded-full shadow-md shadow-gray-700' />
-                      </div>
+                      </div> 
+                      
                       <Link to="/updateProfile" className='hover:bg-blue-700 bg-blue-800 text-white font-medium px-16 py-2'>
                         Edit Profile
                       </Link>

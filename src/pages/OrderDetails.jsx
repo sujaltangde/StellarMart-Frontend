@@ -48,11 +48,11 @@ export const OrderDetails = () => {
             <>
 
               
-                 <div className='md:px-14 px-2 md:pt-6 pt-2'>
-                <div>
-                  <p className=' text-2xl text-blue-800 '>Order #{orderDetails._id}</p>
+                 <div className='   '>
+                <div className='bg-blue-800 md:py-4 py-2 px-4 md:px-8'>
+                  <p className=' md:text-2xl text-xl text-white  '>Order #{orderDetails._id}</p>
                 </div>
-                <div className='pt-4'>
+                <div className='pt-4 md:px-8 px-4'>
                   <p className='md:text-xl text-xl'>Shipping Info</p>
                   <div className='pt-4'>
                     <ul>
@@ -62,7 +62,7 @@ export const OrderDetails = () => {
                     </ul>
                   </div>
 
-                  <div className='pt-4'>
+                  <div className='pt-4 md:px-0 px-0'>
                     <p className='md:text-xl text-xl'>Payment</p>
                     <ul className='pt-4'>
                       <li><span className='font-medium underline text-green-500 '>PAID</span></li>
@@ -70,7 +70,7 @@ export const OrderDetails = () => {
                       <li><span className='font-medium' >Paid At: </span> {convertDateFormat(orderDetails.paidAt.substr(0, 10))}</li>
                     </ul>
                   </div>
-                  <div className='pt-4 pb-4'>
+                  <div className='pt-4 pb-4 md:px-0 '>
                     <p className='md:text-xl text-xl'>Order Status</p>
                     <ul className='pt-2'>
                       <li><span className={`font-medium text-xl ${orderDetails.orderStatus === "Processing"?"text-blue-500":"text-green-500"} `} >{orderDetails.orderStatus}</span> </li>
@@ -78,10 +78,10 @@ export const OrderDetails = () => {
                   </div>
 
                 </div>
-                <div className='border-t border-gray-700 pt-4'>
+                <div className='border-t border-gray-700 pt-4 md:px-8 px-4'>
                   <p className='md:text-xl text-xl'>Order Items</p>
                 </div>
-                <div className='grid grid-cols-1 gap-5 pt-4 pb-8'>
+                <div className='grid grid-cols-1 gap-5 pt-4 pb-8 md:px-8 px-4'>
                   {
                     orderDetails.orderItems.map((item) => (
                       <div key={item.name} className='grid grid-cols-2 '>

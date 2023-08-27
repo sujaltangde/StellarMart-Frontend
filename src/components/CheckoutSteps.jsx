@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stepper, Step, StepLabel } from '@mui/material';
+import { Stepper, Step, StepLabel, StepConnector } from '@mui/material';
 import {MdLocalShipping} from 'react-icons/md'
 import {BsFillCheckCircleFill} from 'react-icons/bs'
 import {RiBankFill} from 'react-icons/ri'
@@ -29,14 +29,15 @@ export const CheckoutSteps = ({activeStep}) => {
 
   return (
     <>  
-        <Stepper alternativeLabel  activeStep={activeStep} style={stepStyles} >
+        <Stepper alternativeLabel  activeStep={activeStep} style={stepStyles}  >
 
           {steps.map((item, index)=>(
-            <Step key={index}  active={activeStep === index ? true : false } 
+            <Step  key={index}  active={activeStep === index ? true : false } 
             completed={activeStep >= index ? true : false} >
               <StepLabel  style={{
                 color: activeStep >= index ? "blue" : "rgba(0, 0, 0, 0.649)",
               }} icon={item.icon}>{item.label}</StepLabel>
+              
             </Step>
           ))
 

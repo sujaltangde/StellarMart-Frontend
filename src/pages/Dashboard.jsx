@@ -94,7 +94,7 @@ allOrders && allOrders.forEach(item => [
 
         {me ? <>
           <div className='flex justify-start '>
-            <span onClick={() => setSideTog(!sideTog)} className='cursor-pointer z-20 fixed '>
+            <span onClick={() => setSideTog(!sideTog)} className='cursor-pointer text-orange-500 z-20 fixed '>
               <BiMenuAltLeft size={44} />
             </span>
 
@@ -103,22 +103,22 @@ allOrders && allOrders.forEach(item => [
             <div className='w-full'>
 
               <div className='py-6' >
-                <p className='text-center text-2xl'>Dashboard</p>
+                <p className='text-center text-3xl'>Dashboard</p>
               </div>
-              <div className='flex flex-col text-center font-medium  bg-blue-500 text-white py-2'>
-                <p>Total Revenue</p>
-                <p>₹ {totalAmount} </p>
+              <div className='flex flex-col text-center font-medium  bg-blue-700 text-white py-3'>
+                <p className='text-lg' >Total Revenue</p>
+               <div><span>₹</span> <span className='text-lg' > {totalAmount} </span></div>
               </div>
 
-              <div className='grid md:grid-cols-3 grid-cols-1 text-xl md:gap-0 gap-3 justify-items-center md:px-64 py-6'>
+              <div className='grid md:grid-cols-3    grid-cols-1 text-lg font-medium md:gap-0 gap-3 justify-items-center md:px-64 py-6'>
 
-                <div className='bg-red-500 rounded-full font-medium flex justify-center items-center text-white w-40 h-40 '>
-                  <div className='flex flex-col justify-center items-center'>
+                <div className='bg-red-500 rounded-full font-medium  flex justify-center items-center text-white w-40 h-40 '>
+                  <div className='flex flex-col justify-center  items-center'>
                     <p>Products</p>
                     <p>{adminProducts && adminProducts.length}</p>
                   </div>
                 </div>
-                <div className='bg-yellow-500 rounded-full font-medium flex justify-center items-center text-white w-40 h-40 '>
+                <div className='bg-purple-500 rounded-full font-medium flex justify-center items-center text-white w-40 h-40 '>
                   <div className='flex flex-col justify-center items-center'>
                     <p>Orders</p>
                     <p>{allOrders && allOrders.length}</p>
@@ -139,8 +139,8 @@ allOrders && allOrders.forEach(item => [
                 </div>
               </div>
 
-              <div>
-                <div className='mx-auto  md:w-[30vw] w-full py-5 '>
+              <div className='pb-14'>
+                <div className='mx-auto  md:w-[30vw] w-[90vw] py-5 '>
                   <Doughnut data={doughnutState} />
                 </div>
               </div>

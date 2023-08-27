@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ReactStars from 'react-rating-stars-component'
-
+import {LiaRupeeSignSolid} from 'react-icons/lia'
 
 export const Product = ({ product }) => {
 
@@ -23,7 +23,7 @@ export const Product = ({ product }) => {
           <div className='  flex justify-center items-center  '>
             <img src={product.images[0].url} className='object-cover p-4 w-full h-90' alt={product.name} />
           </div>
-    
+
 
 
 
@@ -32,8 +32,9 @@ export const Product = ({ product }) => {
             <div className='flex z-0 flex-wrap items-center gap-2' >
               <ReactStars {...options} /> <span className='md:text-sm text-xs'>({product.numOfReviews} Reviews)</span>
             </div>
-            <span className='text-lg text-orange-600 font-bold'>{`${product.price}`}</span>
-            <span className='text-lg text-orange-600 font-bold'>₹</span>
+            <div className='flex items-center'>
+              <span className='text-lg text-orange-600 font-bold'> <LiaRupeeSignSolid/> </span>
+              <span className='text-lg text-orange-600 font-bold'>{`${product.price}`}</span></div>
           </div>
 
         </div>

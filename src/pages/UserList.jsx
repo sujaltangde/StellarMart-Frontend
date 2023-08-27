@@ -25,7 +25,7 @@ export const UserList = () => {
 
             <MetaData title="All Users" />
             <div className='min-h-screen pt-14'>
-                <span onClick={() => setSideTog(!sideTog)} className='cursor-pointer z-20 fixed '>
+                <span onClick={() => setSideTog(!sideTog)} className='cursor-pointer text-orange-500 z-20 fixed '>
                     <BiMenuAltLeft size={44} />
                 </span>
                 <Sidebar sideTog={sideTog} />
