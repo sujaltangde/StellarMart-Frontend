@@ -87,7 +87,7 @@ export const AllProducts = () => {
             </div>
 
             {products.length !== 0 ?
-              <div className='grid md:grid-cols-4 pb-14 grid-cols-2 md:gap-6 py-8 px-6 gap-3 md:pl-52 justify-items-end'>
+              <div className='grid md:grid-cols-4 pb-14 grid-cols-2 md:gap-6 py-8 px-3 gap-3 md:pl-52 justify-items-end'>
 
 
                 {
