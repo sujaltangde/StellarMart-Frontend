@@ -104,16 +104,15 @@ export const AllProducts = () => {
 
             {/* filter for desktop */}
             <div className='w-44 pl-8 absolute md:top-52 md:flex md:flex-col hidden '>
-              <p className='text-lg font-medium'>Price Range</p>
               <Slider
                 value={price}
                 onChange={priceHandler}
-                valueLabelDisplay="auto"
+                valueLabelDisplay="on"
                 aria-labelledby='range-slider'
                 min={0}
                 max={25000}
-
               />
+              <p className='text-lg font-medium'>Price Range</p>
 
               <p className='text-lg font-medium pt-3'>Categories</p>
               <div className="list-none">
@@ -132,8 +131,7 @@ export const AllProducts = () => {
                 }
               </div>
 
-              <div>
-                <p className='text-lg font-medium pt-3'>Ratings Above</p>
+              <div className='pt-10'>
                 <Slider
                   value={ratings}
                   onChange={(e, newRating) => {
@@ -141,11 +139,12 @@ export const AllProducts = () => {
                     
                   }}
                   aria-labelledby="continuous-slider"
-                  valueLabelDisplay="auto"
+                  valueLabelDisplay="on"
                   min={0}
                   max={5}
 
                 />
+                  <p className='text-lg font-medium '>Ratings Above</p>
               </div>
               <div className='pt-6'>
                 <button className='text-left py-1  px-3 text-white font-semibold rounded hover:bg-orange-400 bg-orange-500' onClick={()=>{
@@ -158,12 +157,12 @@ export const AllProducts = () => {
             {/* filter for mobile devices */}
             <div className='md:hidden flex flex-col pl-8 left-4  pb-8'>
 
-              <p className='text-lg font-medium'>Price Range</p>
+                <p className='text-lg font-medium pb-6'>Price Range</p>
               <div className='w-52 pl-8  md:hidden md:flex-col flex '>
                 <Slider
                   value={price}
                   onChange={priceHandler}
-                  valueLabelDisplay="auto"
+                  valueLabelDisplay="on"
                   aria-labelledby='range-slider'
                   min={0}
                   max={25000}
@@ -181,7 +180,7 @@ export const AllProducts = () => {
               </div>
 
               <p className='text-lg font-medium pt-3'>Ratings Above</p>
-              <div className="w-52 pl-8  md:hidden md:flex-col flex ">
+              <div className="w-52 pl-8 pt-8 md:hidden md:flex-col flex ">
 
                 <Slider
                   value={ratings}
@@ -189,7 +188,7 @@ export const AllProducts = () => {
                     setRatings(newRating);
                   }}
                   aria-labelledby="continuous-slider"
-                  valueLabelDisplay="auto"
+                  valueLabelDisplay="on"
                   min={0}
                   max={5}
 
