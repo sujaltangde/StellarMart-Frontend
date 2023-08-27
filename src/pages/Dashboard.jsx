@@ -107,7 +107,7 @@ allOrders && allOrders.forEach(item => [
               </div>
               <div className='flex flex-col text-center font-medium  bg-blue-700 text-white py-3'>
                 <p className='text-lg' >Total Revenue</p>
-               <div><span>₹</span> <span className='text-lg' > {totalAmount} </span></div>
+               <div><span>₹ &nbsp; </span> <span className='text-lg' > {Math.floor(totalAmount)}</span></div>
               </div>
 
               <div className='grid md:grid-cols-3    grid-cols-1 text-lg font-medium md:gap-0 gap-3 justify-items-center md:px-64 py-6'>

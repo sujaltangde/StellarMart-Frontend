@@ -53,25 +53,25 @@ export const OrderDetails = () => {
                   <p className=' md:text-2xl text-xl text-white  '>Order #{orderDetails._id}</p>
                 </div>
                 <div className='pt-4 md:px-8 px-4'>
-                  <p className='md:text-xl text-xl'>Shipping Info</p>
+                  <p className='text-2xl'>Shipping Info</p>
                   <div className='pt-4'>
                     <ul>
-                      <li><span className='font-medium'>Name: </span>{orderDetails.user.name}</li>
+                      <li><span className='font-medium'>Name: </span>   {orderDetails.user.name}</li>
                       <li><span className='font-medium' >Phone: </span> {orderDetails.shippingInfo.phoneNo}</li>
                       <li> <span className='font-medium'>Address: </span>  {orderDetails.shippingInfo.address}, {orderDetails.shippingInfo.city}, {orderDetails.shippingInfo.state}, {orderDetails.shippingInfo.pinCode}, {orderDetails.shippingInfo.country}</li>
                     </ul>
                   </div>
 
                   <div className='pt-4 md:px-0 px-0'>
-                    <p className='md:text-xl text-xl'>Payment</p>
-                    <ul className='pt-4'>
-                      <li><span className='font-medium underline text-green-500 '>PAID</span></li>
-                      <li><span className='font-medium' >Amount: </span> ₹{orderDetails.totalPrice}</li>
-                      <li><span className='font-medium' >Paid At: </span> {convertDateFormat(orderDetails.paidAt.substr(0, 10))}</li>
+                    <p className='text-2xl'>Payment Info</p>
+                    <ul className='pt-2'>
+                      <li><span className='font-medium text-xl underline text-green-500 '>PAID</span></li>
+                      <li><span className='font-medium py-1' >Amount: </span> &nbsp;₹{orderDetails.totalPrice}</li>
+                      <li><span className='font-medium py-1' >Paid At: </span>&nbsp; {convertDateFormat(orderDetails.paidAt.substr(0, 10))}</li>
                     </ul>
                   </div>
-                  <div className='pt-4 pb-4 md:px-0 '>
-                    <p className='md:text-xl text-xl'>Order Status</p>
+                  <div className='pt-6 pb-4 md:px-0 '>
+                    <p className='text-2xl'>Order Status</p>
                     <ul className='pt-2'>
                       <li><span className={`font-medium text-xl ${orderDetails.orderStatus === "Processing"?"text-blue-500":"text-green-500"} `} >{orderDetails.orderStatus}</span> </li>
                     </ul>
@@ -89,8 +89,12 @@ export const OrderDetails = () => {
                           <img src={item.image} className='md:w-28 md:h-28 w-20 h-20 ' alt="" />
                           <p>{item.name}</p>
                         </div>
-                        <div className='flex justify-center items-center'>
-                          <p> {item.quantity} X ₹{item.price} = <span className='font-medium'>₹{item.quantity * item.price}</span></p>
+                        <div className='flex md:hidden justify-center items-center'>
+                          <p> {item.quantity} X ₹{item.price} = <span className='font-medium'>₹ &nbsp; {item.quantity * item.price}</span></p>
+                        </div>
+                        <div className='hidden md:flex
+                         justify-center items-center'>
+                          <p> {item.quantity} X ₹{item.price} = <span className='font-medium'>₹ {item.quantity * item.price}</span></p>
                         </div>
 
                       </div>

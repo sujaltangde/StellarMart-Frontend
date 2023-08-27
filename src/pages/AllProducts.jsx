@@ -46,7 +46,7 @@ export const AllProducts = () => {
     setPrice(newPrice)
   }
 
-  console.log(filteredProductsCount)
+  
   
 
   useEffect(() => {

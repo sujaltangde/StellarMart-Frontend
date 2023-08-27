@@ -5,6 +5,9 @@ import { removeAllItemsFromCart, addItemsToCart } from '../actions/cartAction'
 import { Link, useNavigate } from 'react-router-dom'
 import { MetaData } from '../components/MetaData'
 import { toast } from 'react-toastify'
+import { LiaRupeeSignSolid } from 'react-icons/lia'
+
+
 
 export const Cart = () => {
 
@@ -87,7 +90,13 @@ export const Cart = () => {
                                                 </div>
 
                                             </div>
-                                            <div className='flex justify-center  pt-10 font-medium text-xl'>₹{item.quantity * item.price}</div>
+                                            <div className='flex justify-center items-start pt-10 font-medium text-xl'>
+                                                <div className='flex justify-start items-center'><span><LiaRupeeSignSolid/></span>
+
+<span>{item.quantity * item.price}</span></div>
+                                                
+                                                
+                                            </div>
                                         </div>
                                     ))}
 
@@ -95,7 +104,7 @@ export const Cart = () => {
                                     <div className='flex justify-end md:pr-14 pr-6 pb-12'>
 
 
-                                        <span className=' text-2xl font-medium border-t border-blue-600 pt-3 pl-12'>
+                                        <span className=' text-2xl font-sans border-t border-blue-600 pt-3 pl-12'>
                                             Gross Total: ₹{grossTotal()}
                                         </span>
 
@@ -103,7 +112,7 @@ export const Cart = () => {
 
 
                                     <div className=' flex justify-around '>
-                                        <button className='bg-red-500 hover:bg-red-600 text-white md:py-2 py-1 text-lg font-medium md:px-12 px-4 ' onClick={() => dispatch(removeAllItemsFromCart())}>Remove All</button>
+                                        <button className='bg-red-500 hover:bg-red-600 text-white md:py-2 py-1 text-lg font-medium md:px-10 px-3 ' onClick={() => dispatch(removeAllItemsFromCart())}>Remove All</button>
 
 
                                         <button onClick={()=>handleCheckOut()} className='bg-blue-500 text-white md:py-2 py-1 font-medium md:px-12 px-4 text-lg hover:bg-blue-600' >Check Out</button>

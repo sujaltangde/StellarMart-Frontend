@@ -11,6 +11,8 @@ import {MdOutlineVpnKey} from 'react-icons/md'
 import { useNavigate } from 'react-router'
 import {createOrder} from '../actions/orderAction'
 import { removeAllItems } from '../slices/CartSlice'
+import { LiaRupeeSignSolid } from 'react-icons/lia'
+
 
 export const Payment = () => {
 
@@ -137,7 +139,7 @@ export const Payment = () => {
                         
 
                         <input type="submit" 
-                            value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
+                            value={`Pay - ${orderInfo && orderInfo.totalPrice} ₹`}
                             ref = {payBtn}
                             className='w-full cursor-pointer bg-blue-600 py-2 text-white font-medium rounded hover:bg-blue-500'
                         />

@@ -3,6 +3,7 @@ import { MetaData } from '../components/MetaData'
 import { useDispatch, useSelector } from 'react-redux'
 import { CheckoutSteps } from '../components/CheckoutSteps'
 import { useNavigate } from 'react-router'
+import { LiaRupeeSignSolid } from 'react-icons/lia'
 
 
 export const Confirm = () => {
@@ -74,10 +75,18 @@ export const Confirm = () => {
                                                 <img src={item.image} className='md:w-2/12 w-3/12' alt="" />
                                                 <p>{item.name}</p>
                                             </div>
-                                            <div className='w-2/3 text-right flex justify-center items-center'>
-                                            <p className='' >{item.quantity} x  ₹ {item.price} = 
-                                            <span className='font-semibold pl-1'>₹{item.quantity * item.price}</span>
-                                            </p>
+                                            <div className='w-2/3 text-right flex justify-end items-end'>
+                                           
+                                           
+    {item.quantity}  x  <span className='flex justify-center items-center'>₹{item.price}</span>  
+                                           
+                                           
+                                           
+                                            <span className='font-semibold pl-1'>= ₹{item.quantity * item.price}</span>
+
+
+
+                                            
                                             </div>
                                         </div>
                                     ))
