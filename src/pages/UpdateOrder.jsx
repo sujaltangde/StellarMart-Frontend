@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router'
 import { getOrderDetails, updateOrder } from '../actions/orderAction'
 import { Loader } from '../components/Loader'
 import {MdOutlineCategory} from 'react-icons/md'
-
+import {LiaRupeeSignSolid} from 'react-icons/lia'
 
 
 export const UpdateOrder = () => {
@@ -76,7 +76,7 @@ export const UpdateOrder = () => {
                   {orderDetails.paymentInfo.status && orderDetails.paymentInfo.status ? <p className='text-2xl text-green-500 underline'>Paid</p> : <p className='text-2xl text-red-500 underline' >Not Paid</p>}
                   <div className='grid grid-cols-2 md:w-2/5 pt-3 pb-3 '>
                     <span className='font-semibold'>Amount:</span>
-                    <span>₹{orderDetails.totalPrice && orderDetails.totalPrice}</span>
+                    <span className='flex justify-start items-center'><LiaRupeeSignSolid/>   {orderDetails.totalPrice && orderDetails.totalPrice}</span>
                   </div>
                 </div>
 
@@ -96,9 +96,10 @@ export const UpdateOrder = () => {
                           <p>{item.name}</p>
                         </div>
                         <div className='w-2/3 text-right flex justify-center items-center'>
-                          <p className='' >{item.quantity} x  ₹ {item.price} =
-                            <span className='font-semibold pl-1'>₹{item.quantity * item.price}</span>
+                          <p className=' flex justify-start items-center ' >{item.quantity} x  <LiaRupeeSignSolid/> {item.price} =
+                            <span className='font-semibold pl-1 flex justify-start items-center '>  <LiaRupeeSignSolid/> {item.quantity * item.price}</span>
                           </p>
+                          
                         </div>
                       </div>
                     ))

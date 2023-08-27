@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getOrderDetails } from '../actions/orderAction'
 import { Loader } from '../components/Loader'
 import { MetaData } from '../components/MetaData'
+import {LiaRupeeSignSolid} from 'react-icons/lia'
+
 
 export const OrderDetails = () => {
 
@@ -66,7 +68,7 @@ export const OrderDetails = () => {
                     <p className='text-2xl'>Payment Info</p>
                     <ul className='pt-2'>
                       <li><span className='font-medium text-xl underline text-green-500 '>PAID</span></li>
-                      <li><span className='font-medium py-1' >Amount: </span> &nbsp;₹{orderDetails.totalPrice}</li>
+                      <li className='flex items-center'><span className='font-medium py-1' >Amount: </span> <LiaRupeeSignSolid/>{orderDetails.totalPrice}</li>
                       <li><span className='font-medium py-1' >Paid At: </span>&nbsp; {convertDateFormat(orderDetails.paidAt.substr(0, 10))}</li>
                     </ul>
                   </div>
@@ -90,7 +92,7 @@ export const OrderDetails = () => {
                           <p>{item.name}</p>
                         </div>
                         <div className='flex md:hidden justify-center items-center'>
-                          <p> {item.quantity} X ₹{item.price} = <span className='font-medium'>₹ &nbsp; {item.quantity * item.price}</span></p>
+                          <p className='flex items-center' > {item.quantity} X <LiaRupeeSignSolid/>{item.price} = <span className='font-medium flex items-center'><LiaRupeeSignSolid/> {item.quantity * item.price}</span></p>
                         </div>
                         <div className='hidden md:flex
                          justify-center items-center'>

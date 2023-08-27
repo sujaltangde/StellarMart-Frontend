@@ -78,11 +78,11 @@ export const Confirm = () => {
                                             <div className='w-2/3 text-right flex justify-end items-end'>
                                            
                                            
-    {item.quantity}  x  <span className='flex justify-center items-center'>₹{item.price}</span>  
+    {item.quantity}  x  <span className='flex justify-center items-center'><LiaRupeeSignSolid/>{item.price}</span>  
                                            
                                            
                                            
-                                            <span className='font-semibold pl-1'>= ₹{item.quantity * item.price}</span>
+                                            <span className='font-semibold flex items-center pl-1'>= <LiaRupeeSignSolid/>{item.quantity * item.price}</span>
 
 
 
@@ -103,22 +103,22 @@ export const Confirm = () => {
                         <div className='pt-4 border border-x-0 border-t-0 border-gray-500 pb-4'>
                             <div className='flex justify-between'>
                                 <span className='font-semibold'>Subtotal:</span>
-                                <span>₹ {subtotal}</span>
+                                <span className='flex items-center'><LiaRupeeSignSolid/>{subtotal}</span>
                             </div>
                             <div className='flex justify-between pt-3'>
                                 <span className='font-semibold'>Shipping Charges:</span>
-                                <span>₹ {shippingCharges}</span>
+                                <span className='flex items-center'><LiaRupeeSignSolid/>{shippingCharges}</span>
                             </div>
                             <div className='flex justify-between pt-3'>
                                 <span className='font-semibold'>GST:</span>
-                                <span>₹ {tax}</span>
+                                <span className='items-center flex'><LiaRupeeSignSolid/> {tax}</span>
                             </div>
 
                         </div>
                         <div>
                             <div className='flex justify-between pt-3'>
                                 <span className='font-semibold'>Total:</span>
-                                <span>₹ { totalPrice }</span>
+                                <span className='items-center flex'><LiaRupeeSignSolid/> { totalPrice }</span>
                             </div>
 
                         </div>
