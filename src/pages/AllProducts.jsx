@@ -77,14 +77,7 @@ export const AllProducts = () => {
         {loading ? <Loader /> :
           <>
 
-            <div className='text-2xl pt-2 pb-3 flex flex-col justify-center items-center '>
-
-
-
-              <span className='border md:pt-0  flex justify-center items-center border-gray-500 pb-1 border-x-0 border-t-0 px-12' >
-                <BsCart4 /> Products</span>
-
-            </div>
+            
 
             {products.length !== 0 ?
               <div className='grid md:grid-cols-4 pb-14 grid-cols-2 md:gap-6 py-8 px-3 gap-3 md:pl-52 justify-items-end'>

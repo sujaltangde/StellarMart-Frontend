@@ -96,8 +96,8 @@ function App() {
         <Route path="/orders" element={<Orders />} />
         <Route path="/account" element={<Account />} />
 
-        <Route path="/products" element={<AllProducts />} />
-        <Route path="/products/:keyword" element={<AllProducts />} />
+        {/* <Route path="/products" element={<AllProducts />} />
+        <Route path="/products/:keyword" element={<AllProducts />} /> */}
 
 
         <Route path="/auth" element={<LoginSignUp />} />
@@ -150,8 +150,8 @@ function App() {
         <Route path="/admin/reviews" element={<ProductReviews/>} />
 
 
-        <Route path="/pproducts" element={<PProducts/>} />
-        <Route path="/pproducts/:searchKey" element={<PProducts/>} />
+        <Route path="/products" element={<PProducts/>} />
+        <Route path="/products/:searchKey" element={<PProducts/>} />
 
 
       </Routes>

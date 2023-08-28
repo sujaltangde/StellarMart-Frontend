@@ -69,9 +69,36 @@ input[type="number"]{
     font-weight: 8 00;
 }
 
+.paginationBtn{
+   
+    height: 40px ;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.paginationBtn > li > a {
+    padding: 10px 12px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black ;
+    cursor: pointer;
 
+}
 
+.paginationBtn > li > a:hover {
+    
+    color: white ;
+    background-color: black;
+   
+
+}
+.pageactive {
+    color: white ;
+    background-color: black;
+}
 
 
 /* Stepper styles */
@@ -88,3 +115,22 @@ input[type="number"]{
   .MuiStepConnector-root-completed {
      background-color: blue;
   }
+
+
+
+
+  @media screen and (max-width: 767px) {
+    /* Mobile styles */
+
+
+    
+.paginationBtn > li > a {
+    padding: 10px 12px;
+    margin: 2px;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black ;
+    cursor: pointer;
+
+}
+}
